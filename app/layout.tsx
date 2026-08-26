@@ -1,10 +1,12 @@
 import { Analytics } from '@vercel/analytics/next'
+import localFont from 'next/font/local'
 import { Noto_Sans_Arabic, Roboto } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
+const jannaArabic = localFont({ src: '../public/fonts/janna-bold.ttf', variable: '--font-janna', display: 'swap' })
 const notoArabic = Noto_Sans_Arabic({ subsets: ['arabic'], variable: '--font-arabic' })
-const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto-face' })
+const roboto = Roboto({ subsets: ['arabic', 'latin'], variable: '--font-roboto-face' })
 
 export const metadata: Metadata = {
   title: 'VertragFlow — طريقك للكونترا فألمانيا',
