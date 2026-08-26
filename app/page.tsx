@@ -3,8 +3,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { ArrowRight, Check, ChevronDown, Globe2, Menu, MessageCircle, Play, ShieldCheck, Sparkles, X } from 'lucide-react'
 
-const logo = '/vertragflow-hero.png'
-const heroImage = '/vertragflow-hero-travel.png'
+const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2026%2C%202026%2C%2002_29_54%20AM-fdMDwaeWtetRMo4jQcS66tTeBoDh6X.png'
+
 const whatsapp = '212612211235'
 type Locale = 'ar' | 'fr' | 'en' | 'de'
 type Copy = typeof translations.ar
