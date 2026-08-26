@@ -22,9 +22,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: var(--font-roboto-face), var(--font-arabic), 'Roboto', Arial, sans-serif;
+  --font-sans: var(--font-roboto-face), 'Roboto', Arial, sans-serif;
   --font-roboto: var(--font-roboto-face), 'Roboto', Arial, sans-serif;
-  --font-janna: var(--font-janna), var(--font-roboto-face), 'Roboto', Arial, sans-serif;
+  --font-janna: var(--font-janna), 'Janna LT', var(--font-roboto-face), 'Roboto', Arial, sans-serif;
   --font-arabic-title: var(--font-janna), 'Janna LT', var(--font-roboto-face), 'Roboto', Arial, sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 }
