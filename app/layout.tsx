@@ -1,11 +1,14 @@
 import { Analytics } from '@vercel/analytics/next'
+import { Noto_Sans_Arabic } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
+const notoArabic = Noto_Sans_Arabic({ subsets: ['arabic'], variable: '--font-arabic' })
+
 export const metadata: Metadata = {
-  title: 'HSAA — Move work forward',
-  description: 'HSAA turns scattered requests into clear, trackable workflows for modern teams.',
-  generator: 'HSAA',
+  title: 'VertragFlow — طريقك للكونترا فألمانيا',
+  description: 'VertragFlow كيساعدك تصيفط ملفات الترشح ديالك لأكثر من 1000 شركة ألمانية بطريقة مهنية وآمنة.',
+  generator: 'VertragFlow',
 }
 
 export const viewport: Viewport = {
@@ -15,5 +18,5 @@ export const viewport: Viewport = {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" dir="ltr" className="bg-background"><body className="antialiased">{children}{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
+  return <html lang="ar" dir="rtl" className="bg-background"><body className={`${notoArabic.variable} antialiased`}>{children}{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
 }
