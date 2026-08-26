@@ -1,9 +1,10 @@
 import { Analytics } from '@vercel/analytics/next'
-import { Noto_Sans_Arabic } from 'next/font/google'
+import { Noto_Sans_Arabic, Roboto } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 const notoArabic = Noto_Sans_Arabic({ subsets: ['arabic'], variable: '--font-arabic' })
+const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto-face' })
 
 export const metadata: Metadata = {
   title: 'VertragFlow — طريقك للكونترا فألمانيا',
@@ -18,5 +19,5 @@ export const viewport: Viewport = {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ar" dir="rtl" className="bg-background"><body className={`${notoArabic.variable} antialiased`}>{children}{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
+  return <html lang="ar" dir="rtl" className="bg-background"><body className={`${notoArabic.variable} ${roboto.variable} antialiased`}>{children}{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
 }
