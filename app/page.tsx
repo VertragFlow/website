@@ -37,10 +37,10 @@ const translations = {
     individual: 'للأفراد',
     agency: 'للوكالات',
     individualPrice: '199',
-    agencyPrice: 'حتى 2,990',
+    agencyPrice: 'تواصل معنا',
     month: 'درهم / شهر',
     candidates: '',
-    included: ['إرسال لأكثر من 1000 شركة', 'إيميل مختلف لكل شركة', 'موافقة قبل كل إرسال', 'توقيت إرسال طبيعي ضد السبام'],
+    included: ['أكثر من 10 مستفيدين', 'إيميل مختلف لكل شركة', 'موافقة قبل كل إرسال', 'رسائل مناسبة لكل طلب'],
     start: 'تواصل معنا',
     faq: 'الأسئلة لي كيتعاودو بزاف',
     faqs: [
@@ -353,7 +353,7 @@ export default function Page() {
 
                   <div className="rounded-xl border border-border p-3">
                     <MessageCircle className="size-4 text-accent" />
-                    <p className="mt-5 text-sm font-semibold">غانخبروك فواتساب</p>
+                    <p className="mt-5 text-sm font-semibold">إيميل خاص بكل شركة</p>
                   </div>
                 </div>
 
@@ -523,10 +523,10 @@ function PriceCard({
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">{title}</p>
           <div className="mt-5 text-4xl font-black tracking-[-0.06em]">
-            {price} <span className="text-sm font-medium tracking-normal text-muted-foreground">{month}</span>
+            {price === 'تواصل معنا' ? price : <>{price} <span className="text-sm font-medium tracking-normal text-muted-foreground">{month}</span></>}
           </div>
         </div>
-        {featured && <span className="rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">50</span>}
+
       </div>
 
       {candidates ? <p className="mt-3 text-sm font-semibold text-accent">{candidates}</p> : null}
