@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowRight, Check, ChevronDown, Globe2, Menu, MessageCircle, Play, ShieldCheck, Sparkles, X } from 'lucide-react'
+import { ArrowRight, Check, ChevronDown, Globe2, LockKeyhole, Menu, MessageCircle, Play, ShieldCheck, Sparkles, X } from 'lucide-react'
 
 const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2026%2C%202026%2C%2002_29_54%20AM-fdMDwaeWtetRMo4jQcS66tTeBoDh6X.png'
 const heroImage = '/vertragflow-hero-travel.png'
@@ -18,6 +18,10 @@ const translations = {
     primary: 'بدا دابا',
     secondary: 'شوف كيفاش خدام',
     trusted: 'اختيار المرشحين الطموحين',
+    systemTitle: 'كيفاش خدام النظام؟',
+    systemBody: 'استعمال المنصة بسيط بزاف: كافي تطلع السيرة الذاتية ديالك مرة وحدة، والباقي كيتدبر بوحدو. كل إيميل كيتكتب بطريقة مختلفة على حساب اسم الشركة، اسم المسؤول اللي غادي يقراه إلا كان متوفر، والمطالب ديال الوظيفة. هادشي كيخلي كل رسالة تبان مكتوبة خصيصا لهاد الشركة، ماشي رسالة معممة، وهادشي علاش ما كتتحسبش سبام.',
+    privacy: 'الجيميل ديالك كيتربط بطريقة آمنة عبر OAuth وكيتستعمل غير لصيفط الإيميلات اللي وافقتي عليها؛ VertragFlow ما كيقراش ولا كيخزن محتوى الإيميلات ديالك. عناوين الشركات كيجيو غير من اللائحة اللي طلعتي، بلا جمع ولا بيع للبيانات. السيرة الذاتية والرسائل والإيميلات المولدة كيتخزنو غير باش تخدم المنصة، وتقدر تمحيهم نهائيا فأي وقت من الإعدادات. المعطيات ديالك ما كتبعش لحتى طرف ثالث.',
+    privacyLink: 'قرا سياسة الخصوصية كاملة',
     workflow: 'من الوثائق حتى للكونترا، كلشي منظم',
     workflowSub: 'نتا عطينا المعلومات والوثائق ديالك، VertragFlow كيتكلف بالباقي.',
     steps: [
@@ -69,6 +73,10 @@ const translations = {
     primary: 'Commencer maintenant',
     secondary: 'Voir comment ça marche',
     trusted: 'Choisi par des candidats ambitieux',
+    systemTitle: 'Comment fonctionne le système ?',
+    systemBody: 'La plateforme est très simple : téléchargez votre CV une seule fois et le reste est automatisé. Chaque e-mail est rédigé différemment selon le nom de l’entreprise, le nom du responsable RH lorsqu’il est disponible et les exigences précises du poste. Chaque message semble ainsi écrit à la main pour cette entreprise, jamais comme un envoi générique — ce qui protège votre compte contre le spam.',
+    privacy: 'Votre Gmail est connecté de façon sécurisée via OAuth et sert uniquement à envoyer les e-mails que vous avez approuvés ; VertragFlow ne lit ni ne stocke le contenu de votre boîte de réception. Les adresses proviennent uniquement de votre liste importée, sans collecte ni revente. Les CV, lettres et e-mails générés sont conservés uniquement pour faire fonctionner le service et peuvent être supprimés à tout moment depuis les Paramètres. Vos données ne sont jamais vendues à des tiers.',
+    privacyLink: 'Lire la politique de confidentialité',
     workflow: 'Des documents au contrat, tout est organisé',
     workflowSub: 'Vous fournissez vos informations, VertragFlow s’occupe du reste.',
     steps: [
@@ -120,6 +128,10 @@ const translations = {
     primary: 'Get started',
     secondary: 'See how it works',
     trusted: 'Chosen by ambitious candidates',
+    systemTitle: 'How the system works',
+    systemBody: 'The platform is remarkably easy to use: upload your CV once and the rest is handled automatically. Every email is written differently based on the company name, the hiring contact’s name when available, and the role’s specific requirements. Each message feels hand-written for that company, never like a generic blast — which is exactly why it avoids spam flags.',
+    privacy: 'Your Gmail is connected securely via OAuth and is only used to send emails you explicitly approve; VertragFlow never reads or stores your inbox contents. Company addresses come only from the list you upload, with no scraping or data reselling. Uploaded CVs, cover letters, and generated emails are stored only to run the service and can be permanently deleted anytime from Settings. Your data is never sold to third parties.',
+    privacyLink: 'Read the full privacy policy',
     workflow: 'From documents to contract, organized',
     workflowSub: 'You provide the details. VertragFlow handles the outreach.',
     steps: [
@@ -171,6 +183,10 @@ const translations = {
     primary: 'Jetzt starten',
     secondary: 'So funktioniert es',
     trusted: 'Für ambitionierte Bewerber',
+    systemTitle: 'So funktioniert das System',
+    systemBody: 'Die Plattform ist sehr einfach: Lebenslauf einmal hochladen, den Rest übernimmt das System automatisch. Jede E-Mail wird individuell verfasst — anhand des Unternehmensnamens, der zuständigen Ansprechperson (sofern verfügbar) und der konkreten Anforderungen der Stelle. So wirkt jede Nachricht persönlich für dieses Unternehmen geschrieben, nie wie eine Massen-Nachricht — und schützt das Konto vor Spam-Markierungen.',
+    privacy: 'Ihr Gmail-Konto wird sicher über OAuth verbunden und ausschließlich zum Versenden ausdrücklich genehmigter E-Mails verwendet; VertragFlow liest oder speichert niemals Ihren Posteingang. Firmenadressen stammen nur aus Ihrer hochgeladenen Liste, ohne Scraping oder Weiterverkauf. Lebensläufe, Schreiben und generierte E-Mails werden nur zum Betrieb des Dienstes gespeichert und können jederzeit in den Einstellungen dauerhaft gelöscht werden. Ihre Daten werden niemals an Dritte verkauft.',
+    privacyLink: 'Vollständige Datenschutzerklärung lesen',
     workflow: 'Von den Unterlagen zum Vertrag',
     workflowSub: 'Du lieferst die Informationen. VertragFlow übernimmt den Versand.',
     steps: [
@@ -372,6 +388,33 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <div className="grid items-center gap-10 rounded-3xl border border-border bg-card p-7 sm:p-10 lg:grid-cols-[0.85fr_1.15fr] lg:p-14">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ simple by design</p>
+            <h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-5xl">{t.systemTitle}</h2>
+            <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">{t.systemBody}</p>
+          </div>
+          <div className="flex flex-col gap-3" aria-label={t.systemTitle}>
+            <div className="flex items-center gap-3 rounded-2xl border border-border bg-background p-4">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground"><span className="font-mono text-sm">CV</span></div>
+              <span className="font-semibold">{locale === 'ar' ? 'السيرة الذاتية مرة وحدة' : locale === 'fr' ? 'CV téléchargé une fois' : locale === 'de' ? 'Lebenslauf einmal hochladen' : 'Upload your CV once'}</span>
+            </div>
+            <div className="flex justify-center text-2xl text-accent" aria-hidden="true">↓</div>
+            <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-border bg-background p-4 text-sm font-semibold">
+              <span className="rounded-full bg-muted px-3 py-2">{locale === 'ar' ? 'اسم الشركة' : locale === 'fr' ? 'Entreprise' : locale === 'de' ? 'Unternehmen' : 'Company name'}</span>
+              <span className="rounded-full bg-muted px-3 py-2">{locale === 'ar' ? 'المسؤول' : locale === 'fr' ? 'Responsable' : locale === 'de' ? 'Ansprechperson' : 'Contact name'}</span>
+              <span className="rounded-full bg-muted px-3 py-2">{locale === 'ar' ? 'متطلبات الوظيفة' : locale === 'fr' ? 'Exigences du poste' : locale === 'de' ? 'Stellenanforderungen' : 'Job requirements'}</span>
+            </div>
+            <div className="flex justify-center text-2xl text-accent" aria-hidden="true">↓</div>
+            <div className="flex items-center gap-3 rounded-2xl border border-accent/50 bg-accent/10 p-4">
+              <MessageCircle className="size-5 shrink-0 text-accent" />
+              <span className="font-semibold">{locale === 'ar' ? 'إيميل فريد مكتوب لهاد الشركة' : locale === 'fr' ? 'Un e-mail unique pour cette entreprise' : locale === 'de' ? 'Eine einzigartige E-Mail für dieses Unternehmen' : 'A unique email for that company'}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="workflow" className="mx-auto max-w-7xl px-5 py-28 lg:px-8">
         <div className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ 3 steps</p>
@@ -456,6 +499,16 @@ export default function Page() {
             {t.primary}
             <ArrowRight className="size-4" />
           </button>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-16 lg:px-8">
+        <div className="flex items-start gap-4 rounded-2xl border border-border bg-muted/30 p-6 text-sm leading-7 text-muted-foreground">
+          <LockKeyhole className="mt-1 size-5 shrink-0 text-accent" aria-hidden="true" />
+          <div>
+            <p>{t.privacy}</p>
+            <a href="/privacy" className="mt-3 inline-flex items-center gap-2 font-semibold text-foreground underline underline-offset-4">{t.privacyLink} <ArrowRight className="size-4" /></a>
+          </div>
         </div>
       </section>
 
