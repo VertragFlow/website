@@ -523,7 +523,10 @@ function PriceCard({
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">{title}</p>
           <div className="mt-5 text-4xl font-black tracking-[-0.06em]">
-            {price === 'تواصل معنا' ? price : <>{price} <span className="text-sm font-medium tracking-normal text-muted-foreground">{month}</span></>}
+            <span>{price}</span>
+            <span className={`text-sm font-medium tracking-normal text-muted-foreground ${price === 'تواصل معنا' ? 'hidden' : ''}`}>
+              {month}
+            </span>
           </div>
         </div>
 
