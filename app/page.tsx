@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { ArrowRight, Check, ChevronDown, Globe2, LockKeyhole, Menu, MessageCircle, Play, ShieldCheck, Sparkles, X } from 'lucide-react'
 
-const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2026%2C%202026%2C%2002_29_54%20AM-fdMDwaeWtetRMo4jQcS66tTeBoDh6X.png'
+const logo = '/vertragflow-wordmark.png'
 const heroImage = '/vertragflow-hero-travel.png'
 const whatsapp = '212612211235'
 type Locale = 'ar' | 'fr' | 'en' | 'de'
@@ -232,6 +232,49 @@ const translations = {
   },
 } satisfies Record<Locale, unknown> as Record<Locale, Copy>
 
+const featureSections = {
+  ar: {
+    problem: ['المشكل اللي كنحيدو', 'البحث على الشركات الحقيقية يدوي، كتابة طلب واحد كتحتاج 20 حتى 40 دقيقة، وتتبع الردود وسط مئات الإيميلات شبه مستحيل.'],
+    database: ['قاعدة بيانات ديال المشغلين واجدة', 'قرّب لمليون إعلان خدمة وتكوين من وكالات التشغيل الألمانية والنمساوية، مع أكثر من 330,000 إيميل مباشر وموثوق. كتقدر تقلب بالمهنة والمدينة والجهة، والإعلانات ديال الوسطاء كتكون معلّمة.'],
+    application: ['كل طلب مكتوب على حساب الوظيفة', 'الذكاء الاصطناعي كيقرا CV ديالك ونص الإعلان وكيكتب Bewerbung ألمانية موجهة لهاد المشغل بالضبط، مع الوثائق مرفقة باسم منظم.'],
+    sending: ['كيتصيفط بالطريقة الصحيحة', 'الإيميلات كتمشي من Gmail ديالك، متفرقة مع الوقت، ونفس المشغل ما كيتعاودش يتواصل معاه على نفس المرشح.'],
+    approval: ['والو ما كيمشي بلا موافقتك', 'راجع، عدّل، صادق أو رفض كل مسودة بوحدها، أو دير موافقة جماعية ملي تكون الدفعة واجدة.'],
+    replies: ['الردود كترجع لعندك', 'المنصة كترصد غير الردود على الطلبات المرسلة وكتطلعها ليك تلقائيا، والوكالات كتشوف المرشحين اللي جاوبو بسرعة.'],
+    agencyFeature: ['مبني للوكالات اللي كتدبر بزاف ديال المرشحين', 'Dashboard واحد كيبين شكون خاصو المراجعة، شكون واجد للإرسال، وشكون توصل برد. كل مرشح عندو pipeline وتاريخ ديالو، والواجهة خدامة بالعربية والألمانية والإنجليزية.'],
+    quote: 'بلا ما يضيع الفريق ديالك الساعات فالبحث وكتابة الطلبات، كل مرشح كيوصلو عشرات الطلبات الألمانية الحقيقية من Gmail ديالو — ونتوما غير راجعو وصادقو.'
+  },
+  fr: {
+    problem: ['Le problème que nous supprimons', 'Trouver de vrais contacts allemands ou autrichiens reste manuel, rédiger une candidature prend 20 à 40 minutes, et suivre les réponses dans des centaines d’e-mails devient impossible.'],
+    database: ['Une base employeurs prête à l’emploi', 'Près d’un million d’offres issues des agences fédérales allemandes et autrichiennes, dont plus de 330 000 avec un e-mail direct vérifié. Recherchez par métier, ville ou région, avec les recruteurs signalés.'],
+    application: ['Une candidature par poste, pas un modèle', 'L’IA lit votre CV et l’annonce réelle pour rédiger une Bewerbung allemande adressée à cet employeur précis, avec vos documents joints sous un nom propre.'],
+    sending: ['Envoyé de la bonne façon', 'Les e-mails partent de votre Gmail, espacés dans le temps, et le même employeur ne sera jamais contacté deux fois pour le même candidat.'],
+    approval: ['Rien ne part sans votre accord', 'Relisez, modifiez, approuvez ou refusez chaque brouillon, ou validez toute une série quand elle est prête.'],
+    replies: ['Les réponses vous reviennent', 'La plateforme détecte uniquement les réponses aux candidatures envoyées et les remonte automatiquement. Les agences voient immédiatement les candidats qui ont reçu une réponse.'],
+    agencyFeature: ['Pensé pour gérer beaucoup de candidats', 'Un tableau de bord montre qui doit être relu, qui est prêt à envoyer et qui a reçu une réponse. Pipeline et historique par candidat, avec interface arabe, allemande et anglaise.'],
+    quote: 'Au lieu de faire passer des heures à votre équipe à chercher des employeurs et rédiger chaque candidature, chaque candidat reçoit des dizaines de demandes allemandes authentiques depuis sa boîte — vous n’avez plus qu’à relire et approuver.'
+  },
+  en: {
+    problem: ['The problem it removes', 'Finding real German or Austrian employer contacts is manual, writing one genuine application takes 20–40 minutes, and tracking replies across hundreds of emails is impossible.'],
+    database: ['A ready employer database', 'Nearly one million listings collected from German and Austrian federal employment agencies, with 330,000+ direct, verified employer emails. Search by profession, city, or region, with recruiters flagged separately.'],
+    application: ['Applications written per job, not per template', 'AI reads the candidate’s CV and the actual job post to draft a German Bewerbung addressed to that employer, with documents attached using a proper filename.'],
+    sending: ['Sent the right way', 'Emails go from the candidate’s own Gmail, spaced out over time, and the same employer is never contacted twice for the same candidate.'],
+    approval: ['Nothing sends without approval', 'Review, edit, approve, or reject every draft individually — or bulk-approve a batch when it looks good.'],
+    replies: ['Replies come back to them', 'The platform watches only for replies to sent applications and surfaces them automatically. Agencies instantly see which candidates got responses.'],
+    agencyFeature: ['Built for running many candidates at once', 'One dashboard shows who needs review, who is ready to send, and who got replies. Per-candidate pipeline and history, with Arabic, German, and English interfaces.'],
+    quote: 'Instead of your team spending hours finding employers and writing applications one by one, each candidate gets dozens of genuine German applications from their own inbox — and you just review and approve.'
+  },
+  de: {
+    problem: ['Das Problem, das wir lösen', 'Echte Arbeitgeberkontakte in Deutschland und Österreich zu finden ist manuell, eine gute Bewerbung dauert 20 bis 40 Minuten, und Antworten über Hunderte E-Mails zu verfolgen ist kaum möglich.'],
+    database: ['Eine fertige Arbeitgeber-Datenbank', 'Fast eine Million Stellen aus deutschen und österreichischen Arbeitsagenturen, davon über 330.000 mit direkter, verifizierter Arbeitgeber-E-Mail. Suche nach Beruf, Stadt oder Region; Vermittler werden markiert.'],
+    application: ['Eine Bewerbung pro Stelle, kein Template', 'Die KI liest Lebenslauf und echte Stellenanzeige und schreibt eine deutsche Bewerbung an genau diesen Arbeitgeber. Dokumente werden sauber benannt angehängt.'],
+    sending: ['Auf die richtige Weise versendet', 'E-Mails kommen aus dem eigenen Gmail-Postfach, werden zeitlich verteilt und derselbe Arbeitgeber wird pro Kandidat nie doppelt kontaktiert.'],
+    approval: ['Nichts geht ohne Freigabe raus', 'Jeden Entwurf prüfen, bearbeiten, freigeben oder ablehnen — oder eine gute Serie gesammelt freigeben.'],
+    replies: ['Antworten kommen direkt zurück', 'Die Plattform erkennt nur Antworten auf gesendete Bewerbungen und zeigt sie automatisch. Agenturen sehen sofort, welche Kandidaten Rückmeldungen erhalten haben.'],
+    agencyFeature: ['Für viele Kandidaten gleichzeitig gebaut', 'Ein Dashboard zeigt offene Prüfungen, versandbereite Bewerbungen und Antworten. Pipeline und Verlauf pro Kandidat, mit arabischer, deutscher und englischer Oberfläche.'],
+    quote: 'Statt dass Ihr Team stundenlang Arbeitgeber sucht und Bewerbungen einzeln schreibt, erhält jeder Kandidat Dutzende echte deutsche Bewerbungen aus dem eigenen Postfach — Sie prüfen und geben nur noch frei.'
+  }
+} satisfies Record<Locale, Record<string, string | string[]>>
+
 export default function Page() {
   const [locale, setLocale] = useState<Locale>('ar')
   const [menu, setMenu] = useState(false)
@@ -239,6 +282,7 @@ export default function Page() {
   const [openFaq, setOpenFaq] = useState(0)
   const [form, setForm] = useState({ name: '', phone: '', email: '', goal: '' })
   const t = useMemo(() => translations[locale], [locale])
+  const f = featureSections[locale]
 
   useEffect(() => {
     const saved = window.localStorage.getItem('vertrag-locale') as Locale | null
@@ -387,6 +431,21 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <section id="solutions" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+        <div className="max-w-2xl"><p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ the bottleneck</p><h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-6xl">{f.problem[0]}</h2><p className="mt-5 text-lg leading-8 text-muted-foreground">{f.problem[1]}</p></div>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">{[f.problem[1], f.sending[1], f.replies[1]].map((item, i) => <article key={i} className="rounded-2xl border border-border bg-card p-6"><span className="font-mono text-sm text-primary">0{i + 1}</span><p className="mt-8 leading-7 text-muted-foreground">{item}</p></article>)}</div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="rounded-3xl bg-primary-dark p-8 text-primary-foreground sm:p-12"><h2 className="text-balance text-4xl font-black tracking-[-0.05em] sm:text-6xl">{f.database[0]}</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-primary-foreground/75">{f.database[1]}</p><div className="mt-10 grid gap-4 sm:grid-cols-2"><div className="rounded-2xl bg-primary p-6"><div className="text-5xl font-black tracking-[-0.06em]">1,000,000+</div><p className="mt-2 text-sm text-primary-foreground/80">{locale === 'ar' ? 'إعلان خدمة وتكوين' : locale === 'fr' ? 'offres et formations' : locale === 'de' ? 'Stellen und Ausbildungen' : 'jobs and apprenticeships'}</p></div><div className="rounded-2xl border border-primary-foreground/20 p-6"><div className="text-5xl font-black tracking-[-0.06em]">330,000+</div><p className="mt-2 text-sm text-primary-foreground/80">{locale === 'ar' ? 'إيميل مشغل موثوق' : locale === 'fr' ? 'e-mails employeurs vérifiés' : locale === 'de' ? 'verifizierte Arbeitgeber-E-Mails' : 'verified employer emails'}</p></div></div></div></section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"><div><p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ per job</p><h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-5xl">{f.application[0]}</h2><p className="mt-5 text-lg leading-8 text-muted-foreground">{f.application[1]}</p></div><div className="rounded-3xl border border-border bg-card p-5"><div className="rounded-2xl border border-dashed border-primary/60 bg-background p-6"><div className="flex items-center justify-between border-b border-border pb-4 text-sm font-semibold"><span>Review / Bewerbung</span><span className="text-primary">PDF attached</span></div><div className="mt-6 flex flex-col gap-3"><div className="h-3 w-2/3 rounded bg-muted"/><div className="h-3 w-full rounded bg-muted"/><div className="h-3 w-5/6 rounded bg-muted"/><div className="mt-4 rounded-xl bg-primary/10 p-4 text-sm text-primary">Bewerbung_Name_Rolle.pdf</div></div></div></div></div></section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="grid gap-4 md:grid-cols-3">{[f.sending, f.approval, f.replies].map(([title, body]) => <article key={title} className="rounded-2xl border border-border bg-card p-7"><Check className="size-5 text-primary"/><h3 className="mt-8 text-2xl font-black">{title}</h3><p className="mt-4 leading-7 text-muted-foreground">{body}</p></article>)}</div></section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="rounded-3xl border border-border bg-card p-8 sm:p-12"><p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ agency mode</p><h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-6xl">{f.agencyFeature[0]}</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">{f.agencyFeature[1]}</p><div className="mt-10 rounded-2xl border border-dashed border-primary/60 bg-background p-5"><div className="grid gap-3 sm:grid-cols-3"><div className="rounded-xl bg-primary p-5 text-primary-foreground">Review queue<br/><strong className="text-2xl">24</strong></div><div className="rounded-xl border border-border p-5">Ready to send<br/><strong className="text-2xl">18</strong></div><div className="rounded-xl border border-border p-5">Replies<br/><strong className="text-2xl">07</strong></div></div></div></div></section>
+
+      <section className="mx-auto max-w-5xl px-5 py-16 text-center lg:px-8"><blockquote className="text-balance text-3xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">“{f.quote}”</blockquote></section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <div className="grid items-center gap-10 rounded-3xl border border-border bg-card p-7 sm:p-10 lg:grid-cols-[0.85fr_1.15fr] lg:p-14">
