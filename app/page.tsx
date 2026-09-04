@@ -5,6 +5,12 @@ import { ArrowRight, Check, ChevronDown, Globe2, LockKeyhole, Menu, MessageCircl
 
 const logo = '/vertragflow-wordmark.png'
 const navLogo = '/vertragflow-icon.png'
+const privacyContent = {
+  ar: 'الجيميل ديالك كيتربط بطريقة آمنة عبر OAuth وكيتستعمل غير لصيفط الإيميلات اللي وافقتي عليها؛ VertragFlow ما كيقراش ولا كيخزن محتوى الإيميلات ديالك. عناوين الشركات كيجيو غير من اللائحة اللي طلعتي، بلا جمع ولا بيع للبيانات. السيرة الذاتية والرسائل والإيميلات المولدة كيتخزنو غير باش تخدم المنصة، وتقدر تمحيهم نهائيا فأي وقت من الإعدادات. المعطيات ديالك ما كتبعش لحتى طرف ثالث.',
+  fr: 'Votre Gmail est connecté de façon sécurisée via OAuth et sert uniquement à envoyer les e-mails que vous avez approuvés ; VertragFlow ne lit ni ne stocke le contenu de votre boîte de réception. Les adresses proviennent uniquement de votre liste importée, sans collecte ni revente. Les CV, lettres et e-mails générés sont conservés uniquement pour faire fonctionner le service et peuvent être supprimés à tout moment depuis les Paramètres. Vos données ne sont jamais vendues à des tiers.',
+  en: 'Your Gmail is connected securely via OAuth and is only used to send emails you explicitly approve; VertragFlow never reads or stores your inbox contents. Company addresses come only from the list you upload, with no scraping or data reselling. Uploaded CVs, cover letters, and generated emails are stored only to run the service and can be permanently deleted anytime from Settings. Your data is never sold to third parties.',
+  de: 'Ihr Gmail-Konto wird sicher über OAuth verbunden und ausschließlich zum Versenden ausdrücklich genehmigter E-Mails verwendet; VertragFlow liest oder speichert niemals Ihren Posteingang. Firmenadressen stammen nur aus Ihrer hochgeladenen Liste, ohne Scraping oder Weiterverkauf. Lebensläufe, Schreiben und generierte E-Mails werden nur zum Betrieb des Dienstes gespeichert und können jederzeit in den Einstellungen dauerhaft gelöscht werden. Ihre Daten werden niemals an Dritte verkauft.'
+} satisfies Record<Locale, string>
 const heroImage = '/vertragflow-hero-travel.png'
 const whatsapp = '212612211235'
 type Locale = 'ar' | 'fr' | 'en' | 'de'
@@ -236,9 +242,10 @@ const translations = {
 const featureSections = {
   ar: {
     problem: ['وقف تصيفط الترشيحات يدويا للشركات.', 'الترشيح اليدوي كياخد وقت بزاف، وهادشي كيخليك تصيفط لعدد قليل من الشركات — وكلما قل عدد الترشيحات، طلعت نسبة الرفض.'],
-    databaseSub: 'آلاف Arbeitgeber كيتسناوك.',
+    databaseSub: 'آلاف ديال الشركات (Arbeitgeber) راهم كيتسناوك.',
+    applicationSub: 'إيميل خاص لكل بيويربونغ (Bewerbung).', systemSub: 'سيستيم سهل ومتكامل.', agencyLabel: 'للوكالات',
     database: ['قاعدة بيانات ديال المشغلين واجدة', 'قرّب لمليون إعلان خدمة وتكوين من وكالات التشغيل الألمانية والنمساوية، مع أكثر من 330,000 إيميل مباشر وموثوق. كتقدر تقلب بالمهنة والمدينة والجهة، والإعلانات ديال الوسطاء كتكون معلّمة.'],
-    application: ['كل طلب مكتوب على حساب الوظيفة', 'الذكاء الاصطناعي كيقرا CV ديالك ونص الإعلان وكيكتب Bewerbung ألمانية موجهة لهاد المشغل بالضبط، مع الوثائق مرفقة باسم منظم.'],
+    application: ['كل طلب مكتوب على حساب الوظيفة', 'الذكاء الاصطناعي كيقرا السيرة الذاتية ديالك والإعلان الحقيقي ديال الخدمة، وكيكتب ترشيح كيشير للمطالب المحددة ديال هاد الإعلان — ماشي نموذج معمم.'],
     sending: ['كيتصيفط بالطريقة الصحيحة', 'الإيميلات كتمشي من Gmail ديالك، متفرقة مع الوقت، ونفس المشغل ما كيتعاودش يتواصل معاه على نفس المرشح.'],
     approval: ['والو ما كيمشي بلا موافقتك', 'راجع، عدّل، صادق أو رفض كل مسودة بوحدها، أو دير موافقة جماعية ملي تكون الدفعة واجدة.'],
     replies: ['الردود كترجع لعندك', 'المنصة كترصد غير الردود على الطلبات المرسلة وكتطلعها ليك تلقائيا، والوكالات كتشوف المرشحين اللي جاوبو بسرعة.'],
@@ -248,8 +255,9 @@ const featureSections = {
   fr: {
     problem: ['Arrêtez de postuler manuellement auprès des Unternehmen.', "Les candidatures manuelles prennent beaucoup plus de temps, ce qui réduit le nombre d'entreprises contactées — et moins de candidatures signifie un taux de refus plus élevé."],
     databaseSub: 'Des milliers d’Arbeitgeber vous attendent.',
+    applicationSub: 'E-mail personnalisé pour chaque Bewerbung.', systemSub: '', agencyLabel: 'Pour les agences',
     database: ['Une base employeurs prête à l’emploi', 'Près d’un million d’offres issues des agences fédérales allemandes et autrichiennes, dont plus de 330 000 avec un e-mail direct vérifié. Recherchez par métier, ville ou région, avec les recruteurs signalés.'],
-    application: ['Une candidature par poste, pas un modèle', 'L’IA lit votre CV et l’annonce réelle pour rédiger une Bewerbung allemande adressée à cet employeur précis, avec vos documents joints sous un nom propre.'],
+    application: ['Une candidature par poste, pas un modèle', "L'IA lit votre CV et l'offre d'emploi réelle, puis rédige une candidature qui fait référence aux exigences précises de cette annonce — jamais un modèle générique."],
     sending: ['Envoyé de la bonne façon', 'Les e-mails partent de votre Gmail, espacés dans le temps, et le même employeur ne sera jamais contacté deux fois pour le même candidat.'],
     approval: ['Rien ne part sans votre accord', 'Relisez, modifiez, approuvez ou refusez chaque brouillon, ou validez toute une série quand elle est prête.'],
     replies: ['Les réponses vous reviennent', 'La plateforme détecte uniquement les réponses aux candidatures envoyées et les remonte automatiquement. Les agences voient immédiatement les candidats qui ont reçu une réponse.'],
@@ -259,8 +267,9 @@ const featureSections = {
   en: {
     problem: ['Stop applying to Unternehmen manually.', 'Manual applications take far more time, so you end up sending to fewer companies — and fewer applications means a higher rejection rate.'],
     databaseSub: 'Thousands of Arbeitgeber are waiting.',
+    applicationSub: 'Custom email for every Bewerbung.', systemSub: '', agencyLabel: 'For agencies',
     database: ['A ready employer database', 'Nearly one million listings collected from German and Austrian federal employment agencies, with 330,000+ direct, verified employer emails. Search by profession, city, or region, with recruiters flagged separately.'],
-    application: ['Applications written per job, not per template', 'AI reads the candidate’s CV and the actual job post to draft a German Bewerbung addressed to that employer, with documents attached using a proper filename.'],
+    application: ['Applications written per job, not per template', "AI reads your CV and the actual job posting, then writes an application that references that specific ad's requirements — not a generic template."],
     sending: ['Sent the right way', 'Emails go from the candidate’s own Gmail, spaced out over time, and the same employer is never contacted twice for the same candidate.'],
     approval: ['Nothing sends without approval', 'Review, edit, approve, or reject every draft individually — or bulk-approve a batch when it looks good.'],
     replies: ['Replies come back to them', 'The platform watches only for replies to sent applications and surfaces them automatically. Agencies instantly see which candidates got responses.'],
@@ -270,8 +279,9 @@ const featureSections = {
   de: {
     problem: ['Hör auf, dich manuell bei Unternehmen zu bewerben.', 'Manuelle Bewerbungen dauern deutlich länger, wodurch du an weniger Unternehmen schickst — und weniger Bewerbungen bedeuten eine höhere Ablehnungsquote.'],
     databaseSub: 'Tausende Arbeitgeber warten auf dich.',
+    applicationSub: 'Individuelle E-Mail für jede Bewerbung.', systemSub: '', agencyLabel: 'Für Agenturen',
     database: ['Eine fertige Arbeitgeber-Datenbank', 'Fast eine Million Stellen aus deutschen und österreichischen Arbeitsagenturen, davon über 330.000 mit direkter, verifizierter Arbeitgeber-E-Mail. Suche nach Beruf, Stadt oder Region; Vermittler werden markiert.'],
-    application: ['Eine Bewerbung pro Stelle, kein Template', 'Die KI liest Lebenslauf und echte Stellenanzeige und schreibt eine deutsche Bewerbung an genau diesen Arbeitgeber. Dokumente werden sauber benannt angehängt.'],
+    application: ['Eine Bewerbung pro Stelle, kein Template', 'Die KI liest deinen Lebenslauf und die tatsächliche Stellenanzeige und verfasst eine Bewerbung, die auf die konkreten Anforderungen dieser Anzeige eingeht — keine generische Vorlage.'],
     sending: ['Auf die richtige Weise versendet', 'E-Mails kommen aus dem eigenen Gmail-Postfach, werden zeitlich verteilt und derselbe Arbeitgeber wird pro Kandidat nie doppelt kontaktiert.'],
     approval: ['Nichts geht ohne Freigabe raus', 'Jeden Entwurf prüfen, bearbeiten, freigeben oder ablehnen — oder eine gute Serie gesammelt freigeben.'],
     replies: ['Antworten kommen direkt zurück', 'Die Plattform erkennt nur Antworten auf gesendete Bewerbungen und zeigt sie automatisch. Agenturen sehen sofort, welche Kandidaten Rückmeldungen erhalten haben.'],
@@ -284,20 +294,25 @@ export default function Page() {
   const [locale, setLocale] = useState<Locale>('ar')
   const [menu, setMenu] = useState(false)
   const [modal, setModal] = useState(false)
+  const [privacyOpen, setPrivacyOpen] = useState(false)
   const [openFaq, setOpenFaq] = useState(0)
   const [form, setForm] = useState({ name: '', phone: '', email: '', goal: '' })
   const t = useMemo(() => translations[locale], [locale])
   const f = featureSections[locale]
-  const renderProblemTitle = () => {
-    const [before, after] = f.problem[0].split('Unternehmen')
-    if (after !== undefined) return <>{before}<em className="font-serif not-italic text-primary">Unternehmen</em>{after}</>
-    return f.problem[0]
-  }
+  const renderBrandText = (text: string) => text.split(/(Unternehmen|Arbeitgeber|Bewerbung)/g).map((part, index) => /^(Unternehmen|Arbeitgeber|Bewerbung)$/.test(part) ? <em key={index} className="font-serif not-italic text-primary">{part}</em> : part)
+  const renderProblemTitle = () => renderBrandText(f.problem[0])
 
   useEffect(() => {
     const saved = window.localStorage.getItem('vertrag-locale') as Locale | null
     if (saved && saved in translations) setLocale(saved)
   }, [])
+
+  useEffect(() => {
+    if (!privacyOpen) return
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === 'Escape') setPrivacyOpen(false) }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [privacyOpen])
 
   useEffect(() => {
     document.documentElement.lang = locale
@@ -453,13 +468,13 @@ export default function Page() {
         <div className="mt-10 grid gap-4 md:grid-cols-3">{[f.problem[1], f.sending[1], f.replies[1]].map((item, i) => <article key={i} className="rounded-2xl border border-border bg-card p-6"><span className="font-mono text-sm text-primary">0{i + 1}</span><p className="mt-8 leading-7 text-muted-foreground">{item}</p></article>)}</div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="rounded-3xl bg-primary-dark p-8 text-primary-foreground sm:p-12"><h2 className="text-balance text-4xl font-black tracking-[-0.05em] sm:text-6xl">{f.database[0]}</h2><p className="mt-4 text-xl font-bold text-primary-foreground">{f.databaseSub}</p><p className="mt-5 max-w-3xl text-lg leading-8 text-primary-foreground/75">{f.database[1]}</p><div className="mt-10 grid gap-4 sm:grid-cols-2"><div className="rounded-2xl bg-primary p-6"><div className="text-5xl font-black tracking-[-0.06em]">1,000,000+</div><p className="mt-2 text-sm text-primary-foreground/80">{locale === 'ar' ? 'إعلان خدمة وتكوين' : locale === 'fr' ? 'offres et formations' : locale === 'de' ? 'Stellen und Ausbildungen' : 'jobs and apprenticeships'}</p></div><div className="rounded-2xl border border-primary-foreground/20 p-6"><div className="text-5xl font-black tracking-[-0.06em]">330,000+</div><p className="mt-2 text-sm text-primary-foreground/80">{locale === 'ar' ? 'إيميل مشغل موثوق' : locale === 'fr' ? 'e-mails employeurs vérifiés' : locale === 'de' ? 'verifizierte Arbeitgeber-E-Mails' : 'verified employer emails'}</p></div></div></div></section>
+      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="rounded-3xl bg-primary-dark p-8 text-primary-foreground sm:p-12"><h2 className="text-balance text-4xl font-black tracking-[-0.05em] sm:text-6xl">{f.database[0]}</h2><p className="mt-4 text-xl font-bold text-primary-foreground">{renderBrandText(f.databaseSub)}</p><p className="mt-5 max-w-3xl text-lg leading-8 text-primary-foreground/75">{f.database[1]}</p><div className="mt-10 grid gap-4 sm:grid-cols-2"><div className="rounded-2xl bg-primary p-6"><div className="text-5xl font-black tracking-[-0.06em]">1,000,000+</div><p className="mt-2 text-sm text-primary-foreground/80">{locale === 'ar' ? 'إعلان خدمة وتكوين' : locale === 'fr' ? 'offres et formations' : locale === 'de' ? 'Stellen und Ausbildungen' : 'jobs and apprenticeships'}</p></div><div className="rounded-2xl border border-primary-foreground/20 p-6"><div className="text-5xl font-black tracking-[-0.06em]">330,000+</div><p className="mt-2 text-sm text-primary-foreground/80">{locale === 'ar' ? 'إيميل مشغل موثوق' : locale === 'fr' ? 'e-mails employeurs vérifiés' : locale === 'de' ? 'verifizierte Arbeitgeber-E-Mails' : 'verified employer emails'}</p></div></div></div></section>
 
-      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"><div><p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ per job</p><h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-5xl">{f.application[0]}</h2><p className="mt-5 text-lg leading-8 text-muted-foreground">{f.application[1]}</p></div><div className="rounded-3xl border border-border bg-card p-5"><div className="rounded-2xl border border-dashed border-primary/60 bg-background p-6"><div className="flex items-center justify-between border-b border-border pb-4 text-sm font-semibold"><span>Review / Bewerbung</span><span className="text-primary">PDF attached</span></div><div className="mt-6 flex flex-col gap-3"><div className="h-3 w-2/3 rounded bg-muted"/><div className="h-3 w-full rounded bg-muted"/><div className="h-3 w-5/6 rounded bg-muted"/><div className="mt-4 rounded-xl bg-primary/10 p-4 text-sm text-primary">Bewerbung_Name_Rolle.pdf</div></div></div></div></div></section>
+      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"><div><p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ per job</p><h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-5xl">{f.application[0]}</h2><p className="mt-3 text-xl font-bold text-primary">{renderBrandText(f.applicationSub)}</p><p className="mt-5 text-lg leading-8 text-muted-foreground">{f.application[1]}</p></div><div className="rounded-3xl border border-border bg-card p-5"><div className="rounded-2xl border border-dashed border-primary/60 bg-background p-6"><div className="flex items-center justify-between border-b border-border pb-4 text-sm font-semibold"><span>Review / Bewerbung</span><span className="text-primary">PDF attached</span></div><div className="mt-6 flex flex-col gap-3"><div className="h-3 w-2/3 rounded bg-muted"/><div className="h-3 w-full rounded bg-muted"/><div className="h-3 w-5/6 rounded bg-muted"/><div className="mt-4 rounded-xl bg-primary/10 p-4 text-sm text-primary">Bewerbung_Name_Rolle.pdf</div></div></div></div></div></section>
 
       <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="grid gap-4 md:grid-cols-3">{[f.sending, f.approval, f.replies].map(([title, body]) => <article key={title} className="rounded-2xl border border-border bg-card p-7"><Check className="size-5 text-primary"/><h3 className="mt-8 text-2xl font-black">{title}</h3><p className="mt-4 leading-7 text-muted-foreground">{body}</p></article>)}</div></section>
 
-      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="rounded-3xl border border-border bg-card p-8 sm:p-12"><p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ agency mode</p><h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-6xl">{f.agencyFeature[0]}</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">{f.agencyFeature[1]}</p><div className="mt-10 rounded-2xl border border-dashed border-primary/60 bg-background p-5"><div className="grid gap-3 sm:grid-cols-3"><div className="rounded-xl bg-primary p-5 text-primary-foreground">Review queue<br/><strong className="text-2xl">24</strong></div><div className="rounded-xl border border-border p-5">Ready to send<br/><strong className="text-2xl">18</strong></div><div className="rounded-xl border border-border p-5">Replies<br/><strong className="text-2xl">07</strong></div></div></div></div></section>
+      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8"><div className="rounded-3xl border border-border bg-card p-8 sm:p-12"><p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">{locale === 'ar' ? f.agencyLabel : '/ agency mode'}</p><h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-6xl">{f.agencyFeature[0]}</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">{f.agencyFeature[1]}</p><div className="mt-10 rounded-2xl border border-dashed border-primary/60 bg-background p-5"><div className="grid gap-3 sm:grid-cols-3"><div className="rounded-xl bg-primary p-5 text-primary-foreground">Review queue<br/><strong className="text-2xl">24</strong></div><div className="rounded-xl border border-border p-5">Ready to send<br/><strong className="text-2xl">18</strong></div><div className="rounded-xl border border-border p-5">Replies<br/><strong className="text-2xl">07</strong></div></div></div></div></section>
 
       <section className="mx-auto max-w-5xl px-5 py-16 text-center lg:px-8"><blockquote className="text-balance text-3xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">“{f.quote}”</blockquote></section>
 
@@ -468,6 +483,7 @@ export default function Page() {
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">/ simple by design</p>
             <h2 className="mt-4 text-balance text-4xl font-black tracking-[-0.05em] sm:text-5xl">{t.systemTitle}</h2>
+            {locale === 'ar' && <p className="mt-3 text-xl font-bold text-primary">سيستيم سهل ومتكامل.</p>}
             <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">{t.systemBody}</p>
           </div>
           <div className="flex flex-col gap-3" aria-label={t.systemTitle}>
@@ -582,7 +598,7 @@ export default function Page() {
           <LockKeyhole className="mt-1 size-5 shrink-0 text-accent" aria-hidden="true" />
           <div>
             <p>{t.privacy}</p>
-            <a href="/privacy" className="mt-3 inline-flex items-center gap-2 font-semibold text-foreground underline underline-offset-4">{t.privacyLink} <ArrowRight className="size-4" /></a>
+            <button type="button" onClick={() => setPrivacyOpen(true)} className="mt-3 inline-flex items-center gap-2 font-semibold text-foreground underline underline-offset-4">{t.privacyLink} <ArrowRight className="size-4" /></button>
           </div>
         </div>
       </section>
@@ -602,6 +618,15 @@ export default function Page() {
         <MessageCircle className="size-4 text-accent" />
         {t.primary}
       </button>
+
+      {privacyOpen && (
+        <div role="dialog" aria-modal="true" aria-labelledby="privacy-title" onMouseDown={(event) => { if (event.target === event.currentTarget) setPrivacyOpen(false) }} className="fixed inset-0 z-[60] flex items-center justify-center bg-primary/70 p-4 backdrop-blur-sm">
+          <div className="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-background p-6 shadow-2xl sm:p-8">
+            <div className="flex items-start justify-between gap-4"><div><p className="font-mono text-xs uppercase tracking-[0.16em] text-accent">/ privacy</p><h2 id="privacy-title" className="mt-3 text-3xl font-black">{t.privacyLink}</h2></div><button type="button" aria-label={t.close} onClick={() => setPrivacyOpen(false)} className="rounded-full border border-border p-2"><X className="size-4" /></button></div>
+            <p className="mt-7 whitespace-pre-line text-base leading-8 text-muted-foreground">{privacyContent[locale]}</p>
+          </div>
+        </div>
+      )}
 
       {modal && (
         <div role="dialog" aria-modal="true" aria-labelledby="lead-title" className="fixed inset-0 z-50 flex items-end justify-center bg-primary/60 p-0 backdrop-blur-sm sm:items-center sm:p-5">
