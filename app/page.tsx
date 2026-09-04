@@ -15,7 +15,7 @@ const translations = {
     badge: 'طريقك للكونترا فألمانيا كيبدا هنا',
     title: 'ماتقلبش على الكونترا ..خليها تجي لعندك',
     sub: 'واش عييتي من صيفط الإيميلات بوحدك للشركات الألمانية؟ VertragFlow كيدير ليك هاد الخدمة — كيصيفط الوثائق ديالك لأكثر من 1000 شركة، بإيميلات مختلفة وبروفيسيونال، بلا ما يبان سبام.',
-    primary: 'بدا دابا',
+    primary: 'تواصل معنا',
     secondary: 'شوف كيفاش خدام',
     trusted: 'اختيار المرشحين الطموحين',
     systemTitle: 'كيفاش خدام النظام؟',
@@ -45,7 +45,7 @@ const translations = {
     month: 'درهم / شهر',
     candidates: '',
     included: ['أكثر من 10 مستفيدين', 'إيميل مختلف لكل شركة', 'موافقة قبل كل إرسال', 'رسائل مناسبة لكل طلب'],
-    start: 'تواصل معنا',
+    start: 'بدا دابا',
     faq: 'الأسئلة لي كيتعاودو بزاف',
     faqs: [
       ['شنو هو VertragFlow؟', 'منصة كتعاونك تصيفط ملفات الترشح للشركات الألمانية بطريقة منظمة ومهنية.'],
@@ -70,7 +70,7 @@ const translations = {
     badge: 'Votre chemin vers le contrat commence ici',
     title: 'Trouvez votre Ausbildung ou votre emploi en Allemagne',
     sub: "Marre d'envoyer des e-mails un par un ? VertragFlow le fait pour vous — vos documents sont envoyés à plus de 1000 entreprises, avec des messages professionnels et différents, sans spam.",
-    primary: 'Commencer maintenant',
+    primary: 'Parler à un expert',
     secondary: 'Voir comment ça marche',
     trusted: 'Choisi par des candidats ambitieux',
     systemTitle: 'Comment fonctionne le système ?',
@@ -100,7 +100,7 @@ const translations = {
     month: 'MAD / mois',
     candidates: '',
     included: ['1000+ entreprises', 'Un e-mail unique par entreprise', 'Approbation avant envoi', 'Envoi progressif anti-spam'],
-    start: 'Parler à un expert',
+    start: 'Commencer maintenant',
     faq: 'Questions fréquentes',
     faqs: [
       ['Qu’est-ce que VertragFlow ?', 'Une plateforme pour envoyer vos candidatures aux entreprises allemandes de façon professionnelle.'],
@@ -125,7 +125,7 @@ const translations = {
     badge: 'Your path to a German contract starts here',
     title: 'Find your Ausbildung or job in Germany — faster',
     sub: 'Tired of manually emailing German companies? VertragFlow sends your documents to 1000+ companies with unique, professional messages — without looking like spam.',
-    primary: 'Get started',
+    primary: 'Talk to us',
     secondary: 'See how it works',
     trusted: 'Chosen by ambitious candidates',
     systemTitle: 'How the system works',
@@ -155,7 +155,7 @@ const translations = {
     month: 'MAD / month',
     candidates: '',
     included: ['1000+ companies', 'Unique email per company', 'Approval before sending', 'Gradual anti-spam sending'],
-    start: 'Talk to us',
+    start: 'Get started',
     faq: 'Questions, answered',
     faqs: [
       ['What is VertragFlow?', 'A platform for professional outreach to German companies.'],
@@ -180,7 +180,7 @@ const translations = {
     badge: 'Dein Weg zum Vertrag in Deutschland beginnt hier',
     title: 'Finde deine Ausbildung oder deinen Job in Deutschland — schneller',
     sub: 'VertragFlow sendet deine Unterlagen an über 1000 Unternehmen — individuell und professionell, ohne Spam-Eindruck.',
-    primary: 'Jetzt starten',
+    primary: 'Kontakt aufnehmen',
     secondary: 'So funktioniert es',
     trusted: 'Für ambitionierte Bewerber',
     systemTitle: 'So funktioniert das System',
@@ -210,7 +210,7 @@ const translations = {
     month: 'MAD / Monat',
     candidates: '',
     included: ['1000+ Unternehmen', 'Individuelle E-Mail', 'Freigabe vor Versand', 'Schrittweiser Versand'],
-    start: 'Kontakt aufnehmen',
+    start: 'Jetzt starten',
     faq: 'Häufige Fragen',
     faqs: [
       ['Was ist VertragFlow?', 'Eine Plattform für professionelle Bewerbungsansprache in Deutschland.'],
@@ -333,9 +333,10 @@ export default function Page() {
               </select>
             </label>
 
-            <button onClick={() => setModal(true)} className="hidden rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground md:block">
-              {t.primary}
-            </button>
+            <div className="hidden items-center gap-2 md:flex">
+              <a href="https://vertragflow.com/login" className="rounded-full border border-border px-4 py-2 text-sm font-semibold">{t.start}</a>
+              <button onClick={() => setModal(true)} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">{t.primary}</button>
+            </div>
 
             <button aria-label="Open menu" onClick={() => setMenu(!menu)} className="rounded-full border border-border p-2 md:hidden">
               {menu ? <X className="size-4" /> : <Menu className="size-4" />}
@@ -350,9 +351,10 @@ export default function Page() {
                 {x}
               </a>
             ))}
-            <button onClick={() => { setMenu(false); setModal(true) }} className="rounded-full bg-primary px-4 py-3 font-semibold text-primary-foreground">
-              {t.primary}
-            </button>
+            <div className="flex flex-col gap-2">
+              <a href="https://vertragflow.com/login" onClick={() => setMenu(false)} className="rounded-full border border-border px-4 py-3 text-center font-semibold">{t.start}</a>
+              <button onClick={() => { setMenu(false); setModal(true) }} className="rounded-full bg-primary px-4 py-3 font-semibold text-primary-foreground">{t.primary}</button>
+            </div>
           </div>
         )}
       </header>
@@ -372,9 +374,13 @@ export default function Page() {
             <p className="mt-8 max-w-xl text-pretty text-lg leading-8 text-muted-foreground">{t.sub}</p>
 
             <div className="mt-10 flex flex-wrap gap-3">
-              <button onClick={() => setModal(true)} className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 font-semibold text-primary-foreground">
-                {t.primary}
+              <a href="https://vertragflow.com/login" className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 font-semibold text-primary-foreground">
+                {t.start}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </a>
+              <button onClick={() => setModal(true)} className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 font-semibold">
+                <MessageCircle className="size-4 text-accent" />
+                {t.primary}
               </button>
               <a href="#workflow" className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 font-semibold">
                 <Play className="size-4 fill-current" />
@@ -523,8 +529,8 @@ export default function Page() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <PriceCard title={t.individual} price={t.individualPrice} month={t.month} candidates={t.candidates} items={t.included} onClick={() => setModal(true)} button={t.start} />
-            <PriceCard title={t.agency} price={t.agencyPrice} month={t.month} candidates={t.candidates} items={t.included} onClick={() => setModal(true)} button={t.start} featured />
+            <PriceCard title={t.individual} price={t.individualPrice} month={t.month} candidates={t.candidates} items={t.included} onClick={() => window.open('https://vertragflow.com/login', '_blank', 'noopener,noreferrer')} button={t.start} />
+            <PriceCard title={t.agency} price={t.agencyPrice} month={t.month} candidates={t.candidates} items={t.included} onClick={() => window.open('https://vertragflow.com/login', '_blank', 'noopener,noreferrer')} button={t.start} featured />
           </div>
         </div>
       </section>
